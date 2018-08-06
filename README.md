@@ -1,24 +1,38 @@
-# README
+# angels-server-api
+### Rails-API with Token Based Authentication
+***
+#### Initial Configuration
+To get the API-Server started, clone the repository and do following:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**In terminal:**
+1. **Installing all the required gems**
 
-Things you may want to cover:
+    `bundle install`
 
-* Ruby version
+2. **Setting up database**
 
-* System dependencies
+    `rails db:create`
 
-* Configuration
+    *I have used PostgreSQL. For some reason the sqlite-3 (default db) is not working for me. So I had to use PostgreSQL. The database configurations are inside **database.yaml**. Please verify the configuration before running following command.*
 
-* Database creation
+3. **Setting up relations in database**
 
-* Database initialization
+    `rails db:migrate`
+    
+    *The migration files are inside **db/migrate/** folder. It contains the code to create the relations and associations among them.*
 
-* How to run the test suite
+4. **Setting up dummy data**
 
-* Services (job queues, cache servers, search engines, etc.)
+    `rails db:seed`
+    
+    *Run the following command to insert some dummy data to the created relations. It will help get started. Please check the file **seeds.rb** inside **db/** folder and make sure the **lines 8-21** are uncommented.*
 
-* Deployment instructions
 
-* ...
+#### Running the server
+
+1. **Start Server**
+
+    `rails s`
+    
+
+##### The API Server is now ready.
